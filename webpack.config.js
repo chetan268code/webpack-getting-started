@@ -14,7 +14,14 @@ module.exports = {
                 use: {
                     loader: 'babel-loader'
                 }
-            }
+            },
+            {
+                test: /\.css$/i,
+                use: [
+                    'style-loader', // Takes CSS data(from imports) and adds them to the HTML document
+                    'css-loader'    // Knows how to process CSS imports - takes the imported CSS and loads the file contents
+                ],
+            },
         ]
     }
 }
